@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM pypy:3
 COPY . /
 ENV PYTHONUNBUFFERED=1
 RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
