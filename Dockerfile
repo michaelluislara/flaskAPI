@@ -9,6 +9,7 @@ RUN apk add --no-cache geos gdal
 # Update C env vars so compiler can find gdal
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV C_INCLUDE_PATH=/usr/include/gdal
+RUN pip install geopandas
 RUN pip install gdal
 RUN pip install -r requirements.txt
 CMD [ "gunicorn", "app:app" ]
