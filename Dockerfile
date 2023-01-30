@@ -17,7 +17,7 @@ RUN pip install flask
 RUN pip install Flask-API
 RUN pip install gunicorn
 RUN ["chmod", "+x", "commands.sh"]
-RUN ["chmod", "+x", "download.py"]
+RUN ["chmod", "+x", "downloader.py"]
 # RUN useradd -u 1234 my-user
 # USER my-user
 EXPOSE 8000
