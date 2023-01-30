@@ -23,6 +23,6 @@ RUN ["chmod", "+x", "downloader.py"]
 EXPOSE 8000
 # # RUN pip install -r requirements.txt
 # CMD ["Python", "download.py"]
-ENTRYPOINT [ "bash" "commands.sh"]
-# ENTRYPOINT [ "executable" ] ["gunicorn" , "--bind", "0.0.0.0:8000", "app:app"]
+# ENTRYPOINT [ "bash" "commands.sh"]
+ENTRYPOINT ["gunicorn" , "--bind", "0.0.0.0:8000", "app:app"]
 # CMD [ "gunicorn", "app:app" ]
