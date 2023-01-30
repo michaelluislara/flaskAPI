@@ -20,6 +20,8 @@ RUN ["chmod", "+x", "commands.sh"]
 RUN ["chmod", "+x", "downloader.py"]
 # RUN useradd -u 1234 my-user
 # USER my-user
+RUN apt-get update
+RUN apt-get -y install cron
 EXPOSE 8000
 # # RUN pip install -r requirements.txt
 # CMD ["Python", "download.py"]
