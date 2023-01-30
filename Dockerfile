@@ -16,6 +16,8 @@ RUN pip install geopandas
 RUN pip install flask
 RUN pip install Flask-API
 RUN pip install gunicorn
+# RUN useradd -u 1234 my-user
+# USER my-user
 EXPOSE 8000
 # # RUN pip install -r requirements.txt
-ENTRYPOINT [ "gunicorn", "app:app" ]
+CMD [ "gunicorn", "app:app" ]
