@@ -18,4 +18,4 @@ RUN pip install Flask-API
 RUN pip install gunicorn
 EXPOSE 8080
 # # RUN pip install -r requirements.txt
-CMD [ "gunicorn", "app:app" ]
+ENTRYPOINT [ "gunicorn", "--bind 127.0.0.1:8080", "app:app" ]
