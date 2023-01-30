@@ -16,6 +16,6 @@ RUN pip install geopandas
 RUN pip install flask
 RUN pip install Flask-API
 RUN pip install gunicorn
-EXPOSE 8080
+EXPOSE 8000
 # # RUN pip install -r requirements.txt
-ENTRYPOINT [ "gunicorn", "--bind 127.0.0.1:8080", "app:app" ]
+ENTRYPOINT [ "gunicorn", "app:app" ]
