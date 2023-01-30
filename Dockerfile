@@ -20,4 +20,5 @@ RUN pip install gunicorn
 # USER my-user
 EXPOSE 8000
 # # RUN pip install -r requirements.txt
-CMD [ "gunicorn", "app:app" ]
+CMD ["gunicorn" , "--bind", "0.0.0.0:8000", "app:app"]
+# CMD [ "gunicorn", "app:app" ]
