@@ -16,9 +16,13 @@ RUN pip install geopandas
 RUN pip install flask
 RUN pip install Flask-API
 RUN pip install gunicorn
+RUN ["chmod", "+x", "commands.sh"]
+RUN ["chmod", "+x", "download.py"]
 # RUN useradd -u 1234 my-user
 # USER my-user
 EXPOSE 8000
 # # RUN pip install -r requirements.txt
-CMD ["gunicorn" , "--bind", "0.0.0.0:8000", "app:app"]
+# CMD ["Python", "download.py"]
+ENTRYPOINT [ "bash" "commands.sh"]
+# ENTRYPOINT [ "executable" ] ["gunicorn" , "--bind", "0.0.0.0:8000", "app:app"]
 # CMD [ "gunicorn", "app:app" ]

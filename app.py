@@ -1,11 +1,14 @@
 from flask_api import FlaskAPI
-import downloader
+import giver
 
 app = FlaskAPI(__name__)
 
 @app.route('/')
 def example():
-    return downloader.downloaddata()
+    """
+    Helper function to send the data to the requestor.
+    """
+    return giver.givedata()
 if __name__ == "__main__":
    # run the flask app
    app.run()
