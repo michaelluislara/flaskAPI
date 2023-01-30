@@ -16,5 +16,6 @@ RUN pip install geopandas
 RUN pip install flask
 RUN pip install Flask-API
 RUN pip install gunicorn
+EXPOSE 8080
 # # RUN pip install -r requirements.txt
 CMD [ "gunicorn", "app:app" ]
