@@ -1,4 +1,3 @@
 #!/bin/bash
-# python downloader.py
-service cron start
+python downloader.py
 gunicorn --bind 0.0.0.0:8000 app:app
