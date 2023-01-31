@@ -22,8 +22,10 @@ RUN useradd -u 1234 my-user
 RUN apt-get update
 RUN apt-get -y install cron
 COPY example-crontab /etc/cron.d/example-crontab
-RUN chmod 0644 /etc/cron.d/example-crontab && crontab /etc/cron.d/example-crontab
-RUN chmod a+w downloadertracker.txt
+COPY cron.allow /etc/cron.allow
+RUN chmod a+rwx /etc/cron.d/example-crontab && crontab /etc/cron.d/example-crontab
+RUN chmod a+rwx downloadertracker.txt
+RUN chmod a+rwx commands.sh
 # RUN service cron start
 EXPOSE 8000
 USER my-user
