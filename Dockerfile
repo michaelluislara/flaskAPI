@@ -18,7 +18,7 @@ RUN pip install Flask-API
 RUN pip install gunicorn
 RUN ["chmod", "+x", "commands.sh"]
 RUN ["chmod", "+x", "downloader.py"]
-RUN useradd -u 1234 my-user
+RUN useradd mike
 RUN apt-get update
 RUN apt-get -y install cron
 COPY example-crontab /etc/cron.d/example-crontab
@@ -26,11 +26,12 @@ COPY cron.allow /etc/cron.allow
 RUN chmod a+rwx /etc/cron.d/example-crontab && crontab /etc/cron.d/example-crontab
 RUN chmod a+rwx downloadertracker.txt
 RUN chmod a+rwx commands.sh
+# RUN chmod a+rwx /var/run/crond.pid
 # RUN service cron start
 EXPOSE 8000
-USER my-user
+# USER mike
 # # RUN pip install -r requirements.txt
 # CMD ["Python", "download.py"]
-# ENTRYPOINT [ "bash" "commands.sh"]
-ENTRYPOINT ["gunicorn" , "--bind", "0.0.0.0:8000", "app:app"]
+ENTRYPOINT bash commands.sh
+# ENTRYPOINT ["gunicorn" , "--bind", "0.0.0.0:8000", "app:app"]
 # CMD [ "gunicorn", "app:app" ]
