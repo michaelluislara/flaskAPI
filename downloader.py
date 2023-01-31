@@ -3,6 +3,7 @@ import urllib.request
 import geopandas as gpd
 import pandas as pd
 from shapely.geometry import shape, Point
+import datetime
 
 latlongs = pd.read_csv('PC.csv')
 
@@ -39,3 +40,5 @@ df = df.rename(columns={0:"Postal Code",1:"Order Alert Status",2:"Event Name",3:
 
 df.to_json("matches.csv")
 
+with open("downloadertracker.txt", "w") as file:
+    file.writelines(datetime.datetime.today())
