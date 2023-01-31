@@ -23,7 +23,7 @@ RUN apt-get update
 RUN apt-get -y install cron
 COPY example-crontab /etc/cron.d/example-crontab
 RUN chmod 0644 /etc/cron.d/example-crontab && crontab /etc/cron.d/example-crontab
-RUN chmod rw downloadertracker.txt
+RUN chmod a+w downloadertracker.txt
 EXPOSE 8000
 USER my-user
 # # RUN pip install -r requirements.txt
