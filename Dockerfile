@@ -12,12 +12,12 @@ COPY ../ .
 RUN pip install pandas
 RUN pip install shapely
 RUN pip install geopandas
-ENV API_KEY "ab9b0913c45e24e4d5741375c343aabf"
+
 # RUN pip install gdal
 RUN pip install flask
 RUN pip install Flask-API
 RUN pip install gunicorn
-RUN pip install pyopenssl
+# RUN pip install pyopenssl
 RUN ["chmod", "a+x", "commands.sh"]
 RUN ["chmod", "a+x", "downloader.py"]
 RUN useradd mike
