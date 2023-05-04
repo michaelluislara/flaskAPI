@@ -9,9 +9,9 @@ COPY ../ .
 # # Update C env vars so compiler can find gdal
 # ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 # ENV C_INCLUDE_PATH=/usr/include/gdal
-RUN pip install pandas
-RUN pip install shapely
-RUN pip install geopandas
+# RUN pip install pandas
+# RUN pip install shapely
+# RUN pip install geopandas
 
 # RUN pip install gdal
 RUN pip install flask
@@ -28,6 +28,7 @@ RUN apt-get update
 # RUN chmod a+rwx /etc/cron.d/example-crontab && crontab /etc/cron.d/example-crontab
 RUN chmod a+rwx downloadertracker.txt
 RUN chmod a+rwx commands.sh
+ENV API_KEY="ab9b0913c45e24e4d5741375c343aabf"
 # RUN chmod a+rwx /var/run/crond.pid
 # RUN service cron start
 EXPOSE 8000
