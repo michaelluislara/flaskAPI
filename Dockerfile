@@ -14,10 +14,10 @@ COPY ../ .
 # RUN pip install geopandas
 
 # RUN pip install gdal
-RUN pip install flask
+RUN pip install Flask==2.2.3 
 RUN pip install Flask-API
 RUN pip install gunicorn
-# RUN pip install pyopenssl
+RUN pip install pyopenssl
 RUN ["chmod", "a+x", "commands.sh"]
 RUN ["chmod", "a+x", "downloader.py"]
 RUN useradd mike
@@ -28,7 +28,7 @@ RUN apt-get update
 # RUN chmod a+rwx /etc/cron.d/example-crontab && crontab /etc/cron.d/example-crontab
 RUN chmod a+rwx downloadertracker.txt
 RUN chmod a+rwx commands.sh
-ENV API_KEY="ab9b0913c45e24e4d5741375c343aabf"
+
 # RUN chmod a+rwx /var/run/crond.pid
 # RUN service cron start
 EXPOSE 8000
