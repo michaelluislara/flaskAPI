@@ -1,10 +1,10 @@
 from flask_api import FlaskAPI
-from flask import request
+from flask import request, Flask
 import os
 import giver
 from markupsafe import escape
 
-app = FlaskAPI(__name__)
+app = Flask(__name__)
 
 API_KEY = os.environ['API_KEY']
 

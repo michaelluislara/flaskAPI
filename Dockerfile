@@ -14,7 +14,8 @@ COPY ../ .
 # RUN pip install geopandas
 
 # RUN pip install gdal
-RUN pip install Flask==2.2.3 
+# RUN pip install Flask==2.2.3 
+RUN pip install Flask
 RUN pip install Flask-API
 RUN pip install gunicorn
 RUN pip install pyopenssl
